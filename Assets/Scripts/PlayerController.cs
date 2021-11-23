@@ -16,12 +16,15 @@ public class PlayerController : MonoBehaviour
         transform.position = Vector3.zero; //cuando empiece el juego el gameobject estará en la posición 0,0,0
     }
 
+
     void Update()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime); //movimiento constante hacia adelante
 
         verticalInput = Input.GetAxis("Vertical"); //asociamos a la variable verticalInput las teclas W y S (equivalente a las flechas arriba y abajo)
+
         transform.Rotate(Vector3.right * turnSpeed * Time.deltaTime * -verticalInput); //rotará en el eje x si pulsamos W positivamente y negativamente si pulsamos S
+
 
         if (transform.position.z >= zMax) //al llegar a cierta distancia del inicio en la coordenada z, 450
         {
