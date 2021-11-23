@@ -17,11 +17,6 @@ public class SpawnManager : MonoBehaviour
     }
     public void SpawnObstacle()
     {
-        float randomY = Random.Range(-10f, 10f); //generamos un número random entre -10 y 10
-        spawnPos = new Vector3(0, randomY, spawnPos.z + 50f); //La posición de cada obstáculo queremos que sea 50 metros más alante que el anterior y a una altura aleatoria entre -10 y 10
-
-        Instantiate(obstaclePrefab, spawnPos, obstaclePrefab.transform.rotation); //esta función generará el prefab en la posición spawnPose y con la rotación que ya tiene el prefab
-
         float randomY = Random.Range(-10f, 10f); //generamos un número random entre -10 y 10 para la coordenada y
         spawnPos = new Vector3(0, randomY, spawnPos.z + 50f); //el nuevo obstáculo se generará a 50 metros del anterior y a una altura aleatoria
 
